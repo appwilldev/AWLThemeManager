@@ -95,18 +95,21 @@ You can add whatever you want to the defaults.plist. Just use  `objectForKey:` t
 Add the absolute path of bundle to AWLThemeManager object, then set the current theme that you want.
 For example:
 
-	NSString *bundlePath1 = [[NSBundle mainBundle] pathForResource:@"BaseSample" ofType:@"bundle"];
-    NSString *bundlePath2 = [[NSBundle mainBundle] pathForResource:@"Sample" ofType:@"bundle"];
-    AWLThemeManager *mgr = [[AWLThemeManager alloc] init];
-    [mgr addTheme:bundlePath1];
-    mgr.currentTheme = [mgr addTheme:bundlePath2];
-    
+```objc
+NSString *bundlePath1 = [[NSBundle mainBundle] pathForResource:@"BaseSample" ofType:@"bundle"];
+NSString *bundlePath2 = [[NSBundle mainBundle] pathForResource:@"Sample" ofType:@"bundle"];
+AWLThemeManager *mgr = [[AWLThemeManager alloc] init];
+[mgr addTheme:bundlePath1];
+mgr.currentTheme = [mgr addTheme:bundlePath2];
+``` 
+
 Then you can access the resource use the same AWLThemeManager object as follow.
 	
-	UIImage *img = [mgr imageNamed:@"icon"];
-    titleLabel.textColor = [mgr colorForKey:@"Content_Text_Color"];
-    titleLabel.font = [mgr fontForKey:@"Content_Font"];
-
+```objc
+UIImage *img = [mgr imageNamed:@"icon"];
+titleLabel.textColor = [mgr colorForKey:@"Content_Text_Color"];
+titleLabel.font = [mgr fontForKey:@"Content_Font"];
+```
 
 
 
