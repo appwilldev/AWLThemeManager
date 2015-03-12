@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AWL_THEME_NAME</key>
+	<string>BaseSampleTheme</string>
+	<key>Content_Text_Color</key>
+	<string>142,94,231,1</string>
+	<key>Content_Font</key>
+	<string>Snell Roundhand,14</string>
+	<key>View_BG_Color</key>
+	<string>Content_Text_Color</string>
+</dict>
+</plist>
