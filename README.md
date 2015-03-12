@@ -32,7 +32,7 @@ From now on, you can feel release if you want to do that because of the inherita
 
 ### Write your own bundle file
 
-The structure of bundle file is below:
+The structure of bundle file is like the follow screenshot:
 
 ![Bundle](http://ww1.sinaimg.cn/large/73941b03jw1eq2u5jqhm2j204w01k3yg.jpg)
 
@@ -43,7 +43,7 @@ defaults.plist is used to set the property of themes, include color, font etc.
 
 ![defaults.plist](http://ww4.sinaimg.cn/large/73941b03jw1eq2u3kp0vpj20d0037t8x.jpg)
 
-#### bease info
+#### Base info
 Default key used in defualts.plist:
 
 * AWL_THEME_NAME
@@ -68,7 +68,7 @@ It will return the color use follow method:
     
 Make sure you set the right value to the color.
 
-**Support reference** If you want to the same value to different color key, you can set the key of one color to another color, then AWLThemeManager will find the actual value of the color.
+**Support reference** If you want to set the same value to different color key, you can set the key of one color to another color, then AWLThemeManager will find the actual value of the color.
 
 #### Define Font
 The format of font is :
