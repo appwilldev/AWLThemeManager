@@ -121,14 +121,24 @@
     }
     
     NSString *path = self.themeList[themeName];
+    path = [self relativePathToMainBundle:path];
     NSString *filePath = [path stringByAppendingPathComponent:imgName];
     UIImage *img = [UIImage imageNamed:filePath];
+    
     if (img == nil) {
         NSString *baseTheme = self.themeRelationship[themeName];
         img = [self imageNamed:imgName forTheme:baseTheme];
     }
     
     return img;
+}
+
+- (NSString*)relativePathToMainBundle:(NSString*)path
+{
+    NSString *mainBundlePath = [[NSBundle mainBundle] bundlePath];
+    NSString *appDirectory = [mainBundlePath stringByDeletingLastPathComponent];
+    NSString *relativePath = [path stringByReplacingOccurrencesOfString:appDirectory withString:@".."];
+    return relativePath;
 }
 
 - (UIFont *)fontForKey:(NSString *)key
