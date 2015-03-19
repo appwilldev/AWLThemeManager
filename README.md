@@ -1,6 +1,6 @@
 # AWLThemeManager
 
-AWLThemeManager which uses bundle as the module is a lightweight theme manager for iOS.
+AWLThemeManager is a lightweight theme manager for iOS.
 
 ## Features
 
@@ -30,7 +30,9 @@ From now on, you can feel release if you want to do that because of the inherita
 	* AWLThemeManager.h
 	* AWLThemeManager.m
 
-### Write your own bundle file
+### Write your own theme package
+
+**Bundle is preferred as theme package**, though folder can also be used.
 
 The structure of bundle file is like the follow screenshot:
 
