@@ -127,7 +127,12 @@
     
     if (img == nil) {
         NSString *baseTheme = self.themeRelationship[themeName];
-        img = [self imageNamed:imgName forTheme:baseTheme];
+        if ([self isValidString:baseTheme]) {
+            img = [self imageNamed:imgName forTheme:baseTheme];
+        }
+        else {
+            img = [UIImage imageNamed:imgName];
+        }
     }
     
     return img;
