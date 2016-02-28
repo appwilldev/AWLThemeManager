@@ -88,7 +88,12 @@
     NSString *colorValue = [self objectForKey:key forTheme:themeName];
     UIColor *color = [self colorFromString:colorValue];
     if (color == nil && [self isValidString:colorValue]) {
+        NSArray* referenceColor = [colorValue componentsSeparatedByString: @":"];
+        colorValue = referenceColor.firstObject;
         color = [self colorForKey:colorValue forTheme:themeName];
+        if (referenceColor.count > 1) {
+            color = [color colorWithAlphaComponent: [referenceColor[1] floatValue]];
+        }
     }
     
     return color;
