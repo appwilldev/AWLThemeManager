@@ -98,7 +98,11 @@
 {
     if ([self isValidString:colorValue]) {
         NSArray* array = [colorValue componentsSeparatedByString:@","];
-        if (array && [array count] == 4) {
+        if (array && [array count] == 2) {
+            return [UIColor colorWithWhite:[array[0] floatValue]
+                                     alpha:[array[1] floatValue]];
+        }
+        else if (array && [array count] == 4) {
             return [UIColor colorWithRed:[array[0] floatValue]/255
                                    green:[array[1] floatValue]/255
                                     blue:[array[2] floatValue]/255
