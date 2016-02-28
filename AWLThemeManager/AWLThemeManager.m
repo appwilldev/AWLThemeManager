@@ -92,7 +92,7 @@
         colorValue = referenceColor.firstObject;
         color = [self colorForKey:colorValue forTheme:themeName];
         if (referenceColor.count > 1) {
-            color = [color colorWithAlphaComponent: [referenceColor[1] floatValue]];
+            color = [color colorWithAlphaComponent: [referenceColor[1] doubleValue]];
         }
     }
     
@@ -104,14 +104,14 @@
     if ([self isValidString:colorValue]) {
         NSArray* array = [colorValue componentsSeparatedByString:@","];
         if (array && [array count] == 2) {
-            return [UIColor colorWithWhite:[array[0] floatValue]
-                                     alpha:[array[1] floatValue]];
+            return [UIColor colorWithWhite:[array[0] doubleValue]
+                                     alpha:[array[1] doubleValue]];
         }
         else if (array && [array count] == 4) {
-            return [UIColor colorWithRed:[array[0] floatValue]/255
-                                   green:[array[1] floatValue]/255
-                                    blue:[array[2] floatValue]/255
-                                   alpha:[array[3] floatValue]];
+            return [UIColor colorWithRed:[array[0] doubleValue]/255.0
+                                   green:[array[1] doubleValue]/255.0
+                                    blue:[array[2] doubleValue]/255.0
+                                   alpha:[array[3] doubleValue]];
         }
     }
     
@@ -182,7 +182,7 @@
         NSArray *array = [fontValue componentsSeparatedByString:@","];
         if (array && array.count == 2) {
             NSString *fontName = array[0];
-            CGFloat fontSize = [array[1] floatValue];
+            CGFloat fontSize = [array[1] doubleValue];
             if ([self isValidString:fontName]) {
                 if ([fontName isEqualToString:@"bold"]) {
                     font = [UIFont boldSystemFontOfSize:fontSize];
