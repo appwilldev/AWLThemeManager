@@ -63,14 +63,20 @@ The format of color is :
 
 It will return the color use follow method:
 	
-    [UIColor colorWithRed:[array[0] floatValue]/255
-                    green:[array[1] floatValue]/255
-                     blue:[array[2] floatValue]/255
-                    alpha:[array[3] floatValue]];
+    [UIColor colorWithRed:[array[0] doubleValue]/255
+                    green:[array[1] doubleValue]/255
+                     blue:[array[2] doubleValue]/255
+                    alpha:[array[3] doubleValue]];
     
 Make sure you set the right value to the color.
 
-**Support reference** If you want to set the same value to different color key, you can set the key of one color to another color, then AWLThemeManager will find the actual value of the color.
+**Support white colorspace format**. Colors can now be specified in white colorspace (e.g. 0.4,1).
+
+**Support reference**. If you want to set the same value to different color key, you can set the key of one color to another color, then AWLThemeManager will find the actual value of the color.
+
+**Modify alpha by reference**. If you reference a color, e.g. “COLOR1” = “255,0,0,1”, “COLOR2” =
+“COLOR1” you can now append “:[alpha]” to the reference to modify it’s
+alpha, e.g. “COLOR2” = “COLOR1:0.2” will equate to “255,0,0,0.2”.
 
 #### Define Font
 The format of font is :
@@ -88,7 +94,7 @@ If you want to use system font, you should ignore the first value, like this:
     bold,14   //boldSystemFontOfSize
     italic,14 //italicSystemFontOfSize
     
-**Support reference** Same with the color
+**Support reference** Same with the color.
 
 You can add whatever you want to the defaults.plist. Just use  `objectForKey:` to get the value.
 
