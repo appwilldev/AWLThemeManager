@@ -131,6 +131,9 @@
     
     NSString *imageName = [self objectForKey:key forTheme:themeName];
     
+    if (imageName == nil) {
+        imageName = key;
+    }    
     return [self imageNamed:imageName forTheme:themeName];
 }
 
