@@ -118,6 +118,22 @@
     return nil;
 }
 
+- (UIImage *)imageforKey:(NSString *)key
+{
+    return [self imageforKey:key forTheme:self.currentTheme];;
+}
+
+- (UIImage *)imageforKey:(NSString *)key forTheme:(NSString*)themeName
+{
+    if ([self isValidString:themeName] == NO || [self isValidString:key] == NO) {
+        return nil;
+    }
+    
+    NSString *imageName = [self objectForKey:key forTheme:themeName];
+    
+    return [self imageNamed:imageName forTheme:themeName];
+}
+
 - (UIImage *)imageNamed:(NSString *)imgName
 {
     return [self imageNamed:imgName forTheme:self.currentTheme];;
