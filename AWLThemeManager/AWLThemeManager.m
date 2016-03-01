@@ -18,6 +18,8 @@
 
 @implementation AWLThemeManager
 
+@dynamic currentThemeDisplayName;
+
 - (instancetype)init
 {
     self = [super init];
@@ -72,6 +74,21 @@
 - (NSArray *)allThemes
 {
     return [self.themeList allKeys];
+}
+
+- (NSString*) currentThemeDisplayName
+{
+    return [self displayNameForTheme: self.currentTheme];
+}
+
+- (NSString*)displayNameForTheme:(NSString*)themeName
+{
+    NSString* displayName = [self objectForKey:@"AWL_THEME_DISPLAYNAME" forTheme:themeName];
+    if (displayName == nil) {
+        displayName = themeName;
+    }
+
+    return displayName;
 }
 
 - (UIColor *)colorForKey:(NSString *)key

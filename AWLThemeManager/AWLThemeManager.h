@@ -12,10 +12,13 @@
 @interface AWLThemeManager : NSObject
 
 @property (nonatomic, strong) NSString *currentTheme;
+@property (nonatomic, strong) NSString *currentThemeDisplayName;
 
 // return themeName
 - (NSString*)addTheme:(NSString*)themePath;
 - (NSArray*)allThemes;
+
+- (NSString*)displayNameForTheme:(NSString*)themeName;
 
 //Get color from defaults.plist
 - (UIColor*)colorForKey:(NSString*)key;
