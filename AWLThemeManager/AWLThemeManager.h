@@ -25,9 +25,9 @@
 - (UIFont*)fontForKey:(NSString*)key;
 - (UIFont *)fontForKey:(NSString *)key forTheme:(NSString*)themeName;
 
-//Get img from theme bundle
-- (UIImage*)imageNamed:(NSString*)imgName;
-- (UIImage *)imageNamed:(NSString *)imgName forTheme:(NSString*)themeName;
+//Get img name from defaults.plist, and then img from theme bundle. Use key as image name if img name is missed.
+- (UIImage*)imageNamed:(NSString*)key;
+- (UIImage *)imageNamed:(NSString *)key forTheme:(NSString*)themeName;
 
 //key in defaults.plist of the current theme
 - (id)objectForKey:(NSString*)key;

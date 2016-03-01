@@ -20,9 +20,11 @@
     
     NSString *bundlePath1 = [[NSBundle mainBundle] pathForResource:@"BaseSample" ofType:@"bundle"];
     NSString *bundlePath2 = [[NSBundle mainBundle] pathForResource:@"Sample" ofType:@"bundle"];
+    NSString *bundlePath3 = [[NSBundle mainBundle] pathForResource:@"Assets" ofType:@"bundle"];
     AWLThemeManager *mgr = [[AWLThemeManager alloc] init];
     [mgr addTheme:bundlePath1];
-    mgr.currentTheme = [mgr addTheme:bundlePath2];
+    [mgr addTheme:bundlePath2];
+    mgr.currentTheme = [mgr addTheme:bundlePath3];
     UIImage *img = [mgr imageNamed:@"icon"];
     UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
     imgView.center = CGPointMake(CGRectGetWidth(self.view.bounds)/2, CGRectGetHeight(self.view.bounds)/2);

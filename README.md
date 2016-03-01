@@ -94,9 +94,20 @@ If you want to use system font, you should ignore the first value, like this:
     bold,14   //boldSystemFontOfSize
     italic,14 //italicSystemFontOfSize
     
-**Support reference** Same with the color.
+**Support reference**. Same with the color.
 
+### Define image
+There are two way for adding img to theme bundle:
+
+1. Put the image file in the bundle;
+2. Add a xcassets file , then put image files in the xcassets. 
+
+**Support reference**. Same with the color. If image name isn't found in defaults.plist, we use key as image name.
+
+#### Other
 You can add whatever you want to the defaults.plist. Just use  `objectForKey:` to get the value.
+
+
 
 ### How to use in your project
 
