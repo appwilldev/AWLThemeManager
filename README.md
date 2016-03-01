@@ -100,7 +100,12 @@ If you want to use system font, you should ignore the first value, like this:
 There are two way for adding img to theme bundle:
 
 1. Put the image file in the bundle;
-2. Add a xcassets file , then put image files in the xcassets. 
+2. Add a xcassets file, then put image files in the xcassets.
+
+For method 2, the bundle needs to be an actual OS X bundle target in the project with
+it's SDK set to iOS & a valid info.plist in order for Xcode to compile
+the .xcassets file inside it. Please refer to Assets.bundle in demo project.
+
 
 **Support reference**. Same with the color. If image name isn't found in defaults.plist, we use key as image name.
 
