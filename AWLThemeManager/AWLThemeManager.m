@@ -139,7 +139,7 @@
     NSBundle* bundle = [NSBundle bundleWithPath:self.themeList[themeName]];
     
     if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0) {
-        img = [UIImage imageNamed:key inBundle:bundle compatibleWithTraitCollection:nil];
+        img = [UIImage imageNamed:imgName inBundle:bundle compatibleWithTraitCollection:nil];
     }
 #ifdef AWLThemeManager_XCASSETS_iOS7
     else {
