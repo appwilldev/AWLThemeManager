@@ -141,8 +141,8 @@
     if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0) {
         img = [UIImage imageNamed:key inBundle:bundle compatibleWithTraitCollection:nil];
     }
-    else {
 #ifdef AWLThemeManager_XCASSETS_iOS7
+    else {
         //This is included for reference/completeness. It fetches the device specific
         //image from the compiled Assets.car embedded in the theme bundle for iOS7 devices.
         //However, it is a *PRIVATE API*
@@ -150,9 +150,12 @@
         //IF you want to enable with cocoapods you'll need this:
         //https://guides.cocoapods.org/syntax/podfile.html#post_install
         static NSString* iOS7PrivateCompatSelector = @"_" @"device" @"Specific" @"ImageNamed:" @"inBundle:";
-        img = [UIImage performSelector:NSSelectorFromString(iOS7PrivateCompatSelector) withObject:imgName withObject:bundle];
-#endif
+        SEL deviceImageNamed = NSSelectorFromString(iOS7PrivateCompatSelector);
+        if ([UIImage respondsToSelector: deviceImageNamed]) {
+        img = [UIImage performSelector: deviceImageNamed withObject:imgName withObject:bundle];
+        }
     }
+#endif
     
     if (img == nil) {
         NSString *path = self.themeList[themeName];
