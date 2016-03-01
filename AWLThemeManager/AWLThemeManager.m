@@ -88,11 +88,11 @@
     NSString *colorValue = [self objectForKey:key forTheme:themeName];
     UIColor *color = [self colorFromString:colorValue];
     if (color == nil && [self isValidString:colorValue]) {
-        NSArray* referenceColor = [colorValue componentsSeparatedByString: @":"];
+        NSArray* referenceColor = [colorValue componentsSeparatedByString:@":"];
         colorValue = referenceColor.firstObject;
         color = [self colorForKey:colorValue forTheme:themeName];
         if (referenceColor.count > 1) {
-            color = [color colorWithAlphaComponent: [referenceColor[1] doubleValue]];
+            color = [color colorWithAlphaComponent:[referenceColor[1] doubleValue]];
         }
     }
     
@@ -118,41 +118,28 @@
     return nil;
 }
 
-- (UIImage *)imageforKey:(NSString *)key
+- (UIImage *)imageNamed:(NSString *)key
 {
-    return [self imageforKey:key forTheme:self.currentTheme];;
+    return [self imageNamed:key forTheme:self.currentTheme];;
 }
 
-- (UIImage *)imageforKey:(NSString *)key forTheme:(NSString*)themeName
+- (UIImage *)imageNamed:(NSString *)key forTheme:(NSString*)themeName
 {
     if ([self isValidString:themeName] == NO || [self isValidString:key] == NO) {
         return nil;
     }
     
-    NSString *imageName = [self objectForKey:key forTheme:themeName];
+    NSString *imgName = [self objectForKey:key forTheme:themeName];
     
-    if (imageName == nil) {
-        imageName = key;
-    }    
-    return [self imageNamed:imageName forTheme:themeName];
-}
-
-- (UIImage *)imageNamed:(NSString *)imgName
-{
-    return [self imageNamed:imgName forTheme:self.currentTheme];;
-}
-
-- (UIImage *)imageNamed:(NSString *)imgName forTheme:(NSString*)themeName
-{
-    if ([self isValidString:themeName] == NO || [self isValidString:imgName] == NO) {
-        return nil;
+    if (imgName == nil) {
+        imgName = key;
     }
     
     UIImage*  img    = nil;
-    NSBundle* bundle = [NSBundle bundleWithPath: self.themeList[themeName]];
+    NSBundle* bundle = [NSBundle bundleWithPath:self.themeList[themeName]];
     
     if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0) {
-        img = [UIImage imageNamed: imgName inBundle: bundle compatibleWithTraitCollection: nil];
+        img = [UIImage imageNamed:key inBundle:bundle compatibleWithTraitCollection:nil];
     }
     else {
 #ifdef AWLThemeManager_XCASSETS_iOS7
@@ -163,7 +150,7 @@
         //IF you want to enable with cocoapods you'll need this:
         //https://guides.cocoapods.org/syntax/podfile.html#post_install
         static NSString* iOS7PrivateCompatSelector = @"_" @"device" @"Specific" @"ImageNamed:" @"inBundle:";
-        img = [UIImage performSelector: NSSelectorFromString(iOS7PrivateCompatSelector) withObject: imgName withObject: bundle];
+        img = [UIImage performSelector:NSSelectorFromString(iOS7PrivateCompatSelector) withObject:imgName withObject:bundle];
 #endif
     }
     
