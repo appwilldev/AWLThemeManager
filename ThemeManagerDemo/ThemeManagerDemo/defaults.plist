@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>AWL_THEME_NAME</key>
-	<string>SampleTheme</string>
+	<string>AssetsTheme</string>
 	<key>AWL_BASE_THEME</key>
-	<string>BaseSampleTheme</string>
+	<string>SampleTheme</string>
 </dict>
 </plist>

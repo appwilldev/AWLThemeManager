@@ -17,6 +17,9 @@
 		9EB336A919F01C2600C82FD3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EB336A719F01C2600C82FD3 /* LaunchScreen.xib */; };
 		9EB336B519F01C2600C82FD3 /* ThemeManagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB336B419F01C2600C82FD3 /* ThemeManagerDemoTests.m */; };
 		9EB336C119F01CAC00C82FD3 /* AWLThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB336C019F01CAC00C82FD3 /* AWLThemeManager.m */; };
+		B5410EA41C853269006203C9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5410EA31C853269006203C9 /* Media.xcassets */; };
+		B5410EA91C853541006203C9 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5410EA81C853541006203C9 /* defaults.plist */; };
+		B5410EAC1C85358F006203C9 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5410E9D1C853236006203C9 /* Assets.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9EB3369419F01C2600C82FD3;
 			remoteInfo = ThemeManagerDemo;
+		};
+		B5410EAA1C853581006203C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EB3368D19F01C2600C82FD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5410E9C1C853236006203C9;
+			remoteInfo = Assets;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,6 +57,10 @@
 		9EB336B419F01C2600C82FD3 /* ThemeManagerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeManagerDemoTests.m; sourceTree = "<group>"; };
 		9EB336BF19F01CAC00C82FD3 /* AWLThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWLThemeManager.h; sourceTree = "<group>"; };
 		9EB336C019F01CAC00C82FD3 /* AWLThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWLThemeManager.m; sourceTree = "<group>"; };
+		B5410E9D1C853236006203C9 /* Assets.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5410E9F1C853236006203C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5410EA31C853269006203C9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		B5410EA81C853541006203C9 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5410E9A1C853236006203C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -73,6 +94,7 @@
 				9EB336BE19F01C4900C82FD3 /* AWLThemeManager */,
 				9EB3369719F01C2600C82FD3 /* ThemeManagerDemo */,
 				9EB336B119F01C2600C82FD3 /* ThemeManagerDemoTests */,
+				B5410E9E1C853236006203C9 /* Assets */,
 				9EB3369619F01C2600C82FD3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +104,7 @@
 			children = (
 				9EB3369519F01C2600C82FD3 /* ThemeManagerDemo.app */,
 				9EB336AE19F01C2600C82FD3 /* ThemeManagerDemoTests.xctest */,
+				B5410E9D1C853236006203C9 /* Assets.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +112,7 @@
 		9EB3369719F01C2600C82FD3 /* ThemeManagerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B5410EA71C853415006203C9 /* AssetsBundle */,
 				0479A2E41AB05A4A00E544E6 /* BaseSample.bundle */,
 				0479A2E21AB0385E00E544E6 /* Sample.bundle */,
 				9EB3369C19F01C2600C82FD3 /* AppDelegate.h */,
@@ -139,6 +163,23 @@
 			path = ../AWLThemeManager;
 			sourceTree = "<group>";
 		};
+		B5410E9E1C853236006203C9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B5410E9F1C853236006203C9 /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B5410EA71C853415006203C9 /* AssetsBundle */ = {
+			isa = PBXGroup;
+			children = (
+				B5410EA81C853541006203C9 /* defaults.plist */,
+				B5410EA31C853269006203C9 /* Media.xcassets */,
+			);
+			name = AssetsBundle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +194,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B5410EAB1C853581006203C9 /* PBXTargetDependency */,
 			);
 			name = ThemeManagerDemo;
 			productName = ThemeManagerDemo;
@@ -177,6 +219,23 @@
 			productReference = 9EB336AE19F01C2600C82FD3 /* ThemeManagerDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B5410E9C1C853236006203C9 /* Assets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5410EA21C853236006203C9 /* Build configuration list for PBXNativeTarget "Assets" */;
+			buildPhases = (
+				B5410E991C853236006203C9 /* Sources */,
+				B5410E9A1C853236006203C9 /* Frameworks */,
+				B5410E9B1C853236006203C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Assets;
+			productName = Assets;
+			productReference = B5410E9D1C853236006203C9 /* Assets.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -192,6 +251,9 @@
 					9EB336AD19F01C2600C82FD3 = {
 						CreatedOnToolsVersion = 6.0.1;
 						TestTargetID = 9EB3369419F01C2600C82FD3;
+					};
+					B5410E9C1C853236006203C9 = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
@@ -210,6 +272,7 @@
 			targets = (
 				9EB3369419F01C2600C82FD3 /* ThemeManagerDemo */,
 				9EB336AD19F01C2600C82FD3 /* ThemeManagerDemoTests */,
+				B5410E9C1C853236006203C9 /* Assets */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5410EAC1C85358F006203C9 /* Assets.bundle in Resources */,
 				9EB336A419F01C2600C82FD3 /* Main.storyboard in Resources */,
 				0479A2E51AB05A4A00E544E6 /* BaseSample.bundle in Resources */,
 				9EB336A919F01C2600C82FD3 /* LaunchScreen.xib in Resources */,
@@ -231,6 +295,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5410E9B1C853236006203C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5410EA91C853541006203C9 /* defaults.plist in Resources */,
+				B5410EA41C853269006203C9 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +329,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5410E991C853236006203C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -263,6 +343,11 @@
 			isa = PBXTargetDependency;
 			target = 9EB3369419F01C2600C82FD3 /* ThemeManagerDemo */;
 			targetProxy = 9EB336AF19F01C2600C82FD3 /* PBXContainerItemProxy */;
+		};
+		B5410EAB1C853581006203C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5410E9C1C853236006203C9 /* Assets */;
+			targetProxy = B5410EAA1C853581006203C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -418,6 +503,44 @@
 			};
 			name = Release;
 		};
+		B5410EA01C853236006203C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Assets/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appwill.Assets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		B5410EA11C853236006203C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Assets/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appwill.Assets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -447,6 +570,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B5410EA21C853236006203C9 /* Build configuration list for PBXNativeTarget "Assets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5410EA01C853236006203C9 /* Debug */,
+				B5410EA11C853236006203C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
