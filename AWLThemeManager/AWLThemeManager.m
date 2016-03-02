@@ -103,7 +103,7 @@
     }
     
     NSString *colorValue = [self objectForKey:key forTheme:themeName];
-    UIColor *color = [self colorFromString:colorValue];
+    UIColor *color = [self colorFromString:colorValue forTheme: themeName];
     if (color == nil && [self isValidString:colorValue]) {
         NSArray* referenceColor = [colorValue componentsSeparatedByString:@":"];
         colorValue = referenceColor.firstObject;
@@ -116,9 +116,23 @@
     return color;
 }
 
-- (UIColor*)colorFromString:(NSString*)colorValue
+- (UIColor*)colorFromString:(NSString*)colorValue forTheme:(NSString *)themeName
 {
     if ([self isValidString:colorValue]) {
+        
+        if ([colorValue hasPrefix: @"#"]) {
+            NSArray*  array       = [colorValue componentsSeparatedByString:@","];
+            NSString* patternName = [array[0] substringFromIndex:1];
+            UIImage* patternImage = [self imageNamed:patternName forTheme:themeName];
+            if (patternImage == nil) {
+                return nil;
+            }
+            UIColor* color = [UIColor colorWithPatternImage: patternImage];
+            if (array.count == 2) {
+                color = [color colorWithAlphaComponent: [array[1] doubleValue]];
+            }
+            return color;
+        }
         NSArray* array = [colorValue componentsSeparatedByString:@","];
         if (array && [array count] == 2) {
             return [UIColor colorWithWhite:[array[0] doubleValue]
