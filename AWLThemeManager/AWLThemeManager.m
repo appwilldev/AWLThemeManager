@@ -268,24 +268,54 @@
     return obj;
 }
 
+//Keep for back compat
 - (NSString *)filePathForFileName:(NSString *)fileName
 {
     return [self filePathForFileName:fileName forTheme:self.currentTheme];
 }
 
-- (NSString*)filePathForFileName:(NSString *)fileName forTheme:(NSString*)themeName
+- (NSString *)filePathForFileName:(NSString *)fileName ofType:(NSString*) type
 {
-    if ([self isValidString:themeName] == NO || [self isValidString:fileName] == NO) {
+    return [self filePathForFileName:fileName ofType:type forTheme:self.currentTheme];
+}
+
+//Keep for back compat
+- (NSString*)filePathForFileName:(NSString *)name forTheme:(NSString*)themeName
+{
+    return [self filePathForFileName:name ofType:nil forTheme:themeName];
+}
+
+- (NSString*)filePathForFileName:(NSString *)name ofType:(NSString*) type forTheme:(NSString*)themeName
+{
+    if ([self isValidString:themeName] == NO || [self isValidString:name] == NO) {
         return nil;
     }
     
+    NSString *fileName = [self objectForKey:name forTheme:themeName];
     
-    NSFileManager *fileManger = [NSFileManager defaultManager];
-    NSString *themePath = self.themeList[themeName];
-    NSString *filePath = [themePath stringByAppendingPathComponent:fileName];
-    if ([fileManger fileExistsAtPath:filePath] == NO) {
-        NSString *baseTheme = self.themeRelationship[themeName];
-        filePath = [self filePathForFileName:fileName forTheme:baseTheme];
+    if (fileName == nil) {
+        fileName = name;
+    }
+    
+    NSBundle* themeBundle = [NSBundle bundleWithPath:self.themeList[themeName]];
+    NSString* filePath = [themeBundle pathForResource: fileName ofType: type];
+    
+    if (filePath == nil) {
+        NSFileManager *fileManger = [NSFileManager defaultManager];
+        NSString *themePath = self.themeList[themeName];
+        NSString *tmpPath = [themePath stringByAppendingPathComponent:name];
+        if ([fileManger fileExistsAtPath:tmpPath]) {
+            filePath = tmpPath;
+        }
+        else {
+            NSString *baseTheme = self.themeRelationship[themeName];
+            filePath = [self filePathForFileName:name ofType:type forTheme:baseTheme];
+        }
+    }
+    
+    if (filePath == nil) {
+        NSBundle* bundle = [NSBundle mainBundle];
+        filePath = [bundle pathForResource: fileName ofType: type];
     }
     
     return filePath;
