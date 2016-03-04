@@ -35,6 +35,8 @@
 
 //file path in the current theme bundle
 - (NSString*)filePathForFileName:(NSString*)fileName;
+- (NSString *)filePathForFileName:(NSString *)fileName ofType:(NSString*) type;
 - (NSString*)filePathForFileName:(NSString *)fileName forTheme:(NSString*)themeName;
+- (NSString*)filePathForFileName:(NSString *)name ofType:(NSString*) type forTheme:(NSString*)themeName;
 
 @end
