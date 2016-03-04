@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AWLThemeManager"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "AWLThemeManager is a lightweight theme manager for iOS."
   s.homepage     = "https://github.com/appwilldev/AWLThemeManager"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
