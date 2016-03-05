@@ -72,6 +72,8 @@ Make sure you set the right value to the color.
 
 **Support white colorspace format**. Colors can now be specified in white colorspace (e.g. 0.4,1).
 
+**Support color with pattern image**. Colors can now be specified as a pattern image with the format "#[ImageName],[Optional Alpha]" (e.g. #Foo", "#Foo,0.5").
+
 **Support reference**. If you want to set the same value to different color key, you can set the key of one color to another color, then AWLThemeManager will find the actual value of the color.
 
 **Modify alpha by reference**. If you reference a color, e.g. “COLOR1” = “255,0,0,1”, “COLOR2” =
