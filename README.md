@@ -1,7 +1,8 @@
 # AWLThemeManager
 
-AWLThemeManager is a lightweight theme manager for iOS.
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/AWLThemeManager.svg)](https://img.shields.io/cocoapods/v/AWLThemeManager.svg)
 
+AWLThemeManager is a lightweight theme manager for iOS.
 ## Features
 
 ### What can be customized
@@ -110,6 +111,11 @@ the .xcassets file inside it. Please refer to Assets.bundle in demo project.
 
 
 **Support reference**. Same with the color. If image name isn't found in defaults.plist, we use key as image name.
+
+### File
+Now you can have “foo”->”bar” in the theme and search all bundles for
+“foo” of type “dat”, in addition to falling back to the main bundle. If
+key “foo” is not found, “foo” is assumed to be the file name.
 
 #### Other
 You can add whatever you want to the defaults.plist. Just use  `objectForKey:` to get the value.
