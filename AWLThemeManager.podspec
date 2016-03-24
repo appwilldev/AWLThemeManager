@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AWLThemeManager"
-  s.version      = "1.0.6"
+  s.version      = "1.0.7"
   s.summary      = "AWLThemeManager is a lightweight theme manager for iOS."
   s.homepage     = "https://github.com/appwilldev/AWLThemeManager"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -121,6 +121,6 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  s.dependency "UIColor-HexString"
+  s.dependency "UIColor-HexString", "~> 1.3.0"
   
 end
