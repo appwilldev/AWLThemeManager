@@ -7,6 +7,7 @@
 //
 
 #import "AWLThemeManager.h"
+#import <UIColor+HexString.h>
 
 @interface AWLThemeManager ()
 
@@ -103,7 +104,7 @@
 {
     if ([self isValidString:colorValue]) {
         
-        if ([colorValue hasPrefix: @"#"]) {
+        if ([colorValue hasPrefix: @"@"]) {
             NSArray*  array       = [colorValue componentsSeparatedByString:@","];
             NSString* patternName = [array[0] substringFromIndex:1];
             UIImage* patternImage = [self imageNamed:patternName];
@@ -116,6 +117,10 @@
             }
             return color;
         }
+        else if ([colorValue hasPrefix: @"#"]) {
+            return [UIColor colorWithHexString: colorValue];
+        }
+        
         NSArray* array = [colorValue componentsSeparatedByString:@","];
         if (array && [array count] == 2) {
             return [UIColor colorWithWhite:[array[0] doubleValue]
